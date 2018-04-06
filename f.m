@@ -41,14 +41,14 @@ eta = qrn(1);
 mu = qrn(2:4);
 w = xsys(5:7);
 h   = xsys(8);
-%-----------Dcont controller----------%
-if eta>=0
-h   = 1;
-elseif eta<0
-        h = -1;
-end
-   s(k) = h; 
-    k = k+1;
+% % %-----------Dcont controller----------%
+% % if eta>=0
+% % h   = 1;
+% % elseif eta<0
+% %         h = -1;
+% % end
+% %    s(k) = h; 
+% %     k = k+1;
 
 %-------Controllerstates--------%
 etac = qrn(1);
