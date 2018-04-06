@@ -172,7 +172,7 @@ end
 Zt = sqrt(cumtrapz(t,tauT));
 
 %%
-figure(7)
+figure(3)
 subplot(2,1,1)
 plot(t,wt)
 grid on
@@ -185,3 +185,23 @@ grid on
 hold on
 xlabel('time (sec)')
 ylabel('$\sqrt{\int_0^t\tau^\top \tau dt}$') 
+
+%% Principle angle
+ for i = 1:length(t)
+     th = 2*acosd(x(i,1));
+ if th >= 180
+     thn(i) = th -360;
+ else
+     thn(i) = th;
+ end
+ i = i+100;
+ end
+%%
+figure(4)
+plot(t,thn)
+grid on
+hold on
+plot(t,180*ones(1,length(t)),'r','linewidth',2)
+plot(t,-180*ones(1,length(t)),'r','linewidth',2)
+xlabel('time (sec)')
+ylabel('Principal angle (deg)') 
